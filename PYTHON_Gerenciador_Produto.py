@@ -21,6 +21,19 @@ def cadastrar_produto():
         descricao=input('Descrição do Produto: ')
         produtos.append([nome, estoque, preco, data, descricao])
 
+def remover_produto():
+    if len(produtos)>0:
+        nome=input('Digite o nome do produto que deseja remover: ')
+        for produto in produtos:
+            if nome==produto[0]:
+                produtos.remove(produto)
+                print(f'O produto {nome.lower()} foi removido')
+                return True
+
+        print('Produto não encontrado')
+    else:
+        print('Não há produtos cadastrados')
+
 def main():
     escolha=''
     while escolha!=5:
@@ -29,6 +42,8 @@ def main():
         if escolha in list('1234'):
             if escolha=='1':
                 cadastrar_produto()
+            elif escolha=='2':
+                remover_produto()
 
 if __name__== '__main__':
     main()

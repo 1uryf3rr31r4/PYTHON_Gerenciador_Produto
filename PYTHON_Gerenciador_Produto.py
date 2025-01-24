@@ -34,6 +34,33 @@ def remover_produto():
     else:
         print('Não há produtos cadastrados')
 
+def procurar_produto():
+    if len(produtos)>0:
+        nome=input('Qual produto deseja pesquisar? ')
+        for produto in produtos:
+            if nome==produto[0]:
+                print(f'Nome: {produto[0]}')
+                print(f'Preço: ${produto[2]}')
+                print(f'Estoque: {produto[1]}')
+                return True
+        print('Produto não encontrado')
+    else:
+        print('Não há produtos cadastrados')
+
+def ver_produtos():
+    if len(produtos)>0:
+        for produto in produtos:
+            print()
+            print(f'Nome: {produto[0]}')
+            print(f'Estoque: {produto[1]}')
+            print(f'Preço: $ {produto[2]}')
+            print(f'Descrição do produto: {produto[4]}')
+            print(f'Data de registro: {produto[3]}')
+            print()
+        print(f'Total de produtos cadastrados: {len(produtos)}.')
+    else:
+        print('Não há produtos cadastrados')
+
 def main():
     escolha=''
     while escolha!=5:
@@ -44,6 +71,13 @@ def main():
                 cadastrar_produto()
             elif escolha=='2':
                 remover_produto()
+            elif escolha=='3':
+                procurar_produto()
+            elif escolha=='4':
+                ver_produtos()
+        else:
+            if escolha!=5:
+                print('Opção Inválida')
 
 if __name__== '__main__':
     main()

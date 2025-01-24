@@ -63,7 +63,7 @@ def ver_produtos():
 
 def main():
     escolha=''
-    while escolha!=5:
+    while escolha!='5':
         menu()
         escolha=input('>> ')
         if escolha in list('1234'):
@@ -76,7 +76,9 @@ def main():
             elif escolha=='4':
                 ver_produtos()
         else:
-            if escolha!=5:
+            if escolha=='5':
+                print('Fim do Programa')
+            else:
                 print('Opção Inválida')
 
 if __name__== '__main__':

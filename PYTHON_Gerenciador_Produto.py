@@ -10,5 +10,15 @@ def menu():
     print('4 - Ver Produtos')
     print('5 - Sair')
 
-menu()
+def adicionar_produto():
+    print('Quantos produtos deseja adicionar? ')
+    num=int(input('>> '))
 
+def main():
+    escolha=''
+    while escolha!=5:
+        menu()
+        escolha=input('>> ')
+
+if __name__== '__main__':
+    main()
